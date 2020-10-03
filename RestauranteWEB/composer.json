@@ -39,11 +39,16 @@
         "psr-4": {
             "App\\": "app/"
         },
+        
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files":[
+            "app/Http/Functions.php"
         ]
     },
+    
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"

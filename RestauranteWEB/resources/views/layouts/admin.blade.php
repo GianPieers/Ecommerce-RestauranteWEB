@@ -174,7 +174,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-<!-- 
+
           {{-- Categorias    --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -198,7 +198,7 @@
                 </a>
               </li>
             </ul>
-          </li> -->
+          </li>
           {{-- subcategorías     --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -210,13 +210,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('subcategories.create')}}" class="nav-link">
                   <i class="far fas fa-plus nav-icon"></i>
                   <p>Crear</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('subcategories.index')}}" class="nav-link">
                   <i class="far fas fa-list-ol nav-icon"></i>
                   <p>Lista</p>
                 </a>
