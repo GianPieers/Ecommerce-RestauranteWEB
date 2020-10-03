@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
@@ -21,13 +23,22 @@ class CategoryController extends Controller
   
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
  
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required|unique:categories|max:20',
+            'module'=>'required|max:20',
+        ]);
+        $category = new Category;
+        $category->name =e($request->name);
+        $category->module =e($request->module);
+        $category->slug =Str::slug($request->name);
+        $category->save();
+        return redirect()->route('categories.index')->with('info','Se agrego correctamente');
     }
 
   
